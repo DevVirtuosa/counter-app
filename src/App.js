@@ -3,7 +3,7 @@ import "./index.css";
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="app-container">
       <Counter />
     </div>
   );
@@ -16,18 +16,22 @@ function Counter() {
   const date = new Date();
   date.setDate(date.getDate() + count);
 
+  const handleStepChange = (newStep) => setStep(newStep);
+
+  const handleCountChange = (increment) => setCount((c) => c + increment);
+
   return (
-    <div>
-      <div>
-        <button onClick={() => setStep((c) => c - step)}>-</button>
+    <div className="counter-container">
+      <div className="step-container">
+        <button onClick={() => handleStepChange(step - 1)}>-</button>
         <span>Step: {step}</span>
-        <button onClick={() => setStep((c) => c + step)}>+</button>
+        <button onClick={() => handleStepChange(step + 1)}>+</button>
       </div>
 
-      <div>
-        <button onClick={() => setCount((c) => c - 1)}>-</button>
+      <div className="count-container">
+        <button onClick={() => handleCountChange(-1)}>-</button>
         <span>Count: {count}</span>
-        <button onClick={() => setCount((c) => c + 1)}>+</button>
+        <button onClick={() => handleCountChange(1)}>+</button>
       </div>
 
       <p>
