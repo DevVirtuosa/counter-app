@@ -29,9 +29,9 @@ function Counter() {
       </div>
 
       <div className="count-container">
-        <button onClick={() => handleCountChange(-1)}>-</button>
+        <button onClick={() => handleCountChange(-step)}>-</button>
         <span>Count: {count}</span>
-        <button onClick={() => handleCountChange(1)}>+</button>
+        <button onClick={() => handleCountChange(step)}>+</button>
       </div>
 
       <p>
